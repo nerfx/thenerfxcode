@@ -61,7 +61,6 @@ int binary_search(double *arr, int num, double key) {
 }
 
 int main() {
-	srand(time(NULL));
 	cout << "Number of elements in the array: " << endl;
 	int n;
 	cin >> n;

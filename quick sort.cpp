@@ -14,6 +14,7 @@ void quick_sort(double *arr, int left, int right) {
 	int mid = (left + right) / 2;
 
 	double middle = arr[mid]; 
+	while(f<l) {
 		while (arr[f] < middle) {
 			f++;
 		}

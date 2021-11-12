@@ -1,0 +1,7 @@
+void main()
+{
+	complex a(15L, u1234l);
+	int i, j, k;
+	complex b(100L, u11l), c(4568l, u45l), d(0.12e5, u12), e(0.1264L, -45), f;
+	f = b*c+complex(10L, u56l);
+}

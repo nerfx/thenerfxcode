@@ -64,6 +64,17 @@ void output_class(vector<string> F, int num, int s1, int s2) {
 	}
 }
 
+vector<int> search_of_comm(vector<string> complex_class, int ind1, int ind2, int ind_of_row) {
+	vector<int> index_comm;
+	int size_complex_class = complex_class.size();
+	for (int i = ind1; i <= ind2; ++i) {
+		if (complex_class[ind_of_row][i] == ',') {
+			index_comm.push_back(i);
+		}
+	}
+
+	return index_comm;
+}
 
 vector<int> analysis(vector<string> def_class, vector<int> brack_ind, int num_of_row) {
 	bool var1 = true, var2 = true;
@@ -117,9 +128,9 @@ vector<int> analysis(vector<string> def_class, vector<int> brack_ind, int num_of
 	return index;
 }
 
-
 void function(vector<string> sym, vector<int> arr1, vector<int> arr2, int len) {
 	int size4 = arr1.size();
+
 	for (int i = 0; i < size4; ++i) {
 		if (arr2[i] == 0) {
 			sym[arr1[i]].erase(arr2[i], len);
@@ -141,7 +152,7 @@ void function(vector<string> sym, vector<int> arr1, vector<int> arr2, int len) {
 	for (int i = 0; i < size5; ++i) {
 		vector<int> bc = brack(sym, arr1[i]);
 		numbers = analysis(sym, bc, arr1[i]);
-		
+
 		bool ind = false;
 		int n = numbers.size();
 		if (n == 0) {
@@ -151,20 +162,10 @@ void function(vector<string> sym, vector<int> arr1, vector<int> arr2, int len) {
 			for (int k = 0; k < bc[numbers[0]]; ++k) {
 				if (sym[arr1[i]][k] == ',') {
 					ind = true;
+					break;
 				}
-			}
-			
+			}	
 
-			vector<int> num_brack;
-			int n1 = bc.size();
-			for (int k = 0; k < n; ++k) {
-				for (int l = 0; l < n1; ++l) {
-					if (bc[numbers[k]] == bc[l]) {
-						num_brack.push_back(l);
-					}
-				}
-			}
-			
 			if (!ind) {
 				if (numbers.size() / 2 == 1) {
 					for (int j = 0; j <= bc[numbers[1]]; ++j) {
@@ -174,23 +175,55 @@ void function(vector<string> sym, vector<int> arr1, vector<int> arr2, int len) {
 				}
 				else {
 					int add = 1;
+
 					for (int l = 0; l <= bc[numbers[add]]; ++l) {
 						out << sym[arr1[i]][l];
 					}
 					out << endl;
+
+					vector<int> comm1;
+
 					for (int r = 3; r < n; r = r + 2) {
-						for (int e = bc[numbers[r] - 2] + 3; e <= bc[numbers[r]]; ++e) {
+						int new_ind1;
+
+						comm1 = search_of_comm(sym, bc[numbers[r] - 2] + 3, bc[numbers[r]], arr1[i]);
+
+						int size_comm1 = comm1.size();
+						if (size_comm1 == 1) {
+							new_ind1 = bc[numbers[r] - 2] + 3;
+						}
+						else {
+							new_ind1 = comm1[size_comm1 - 2] + 2;
+						}
+						for (int e = new_ind1; e <= bc[numbers[r]]; ++e) {
 							out << sym[arr1[i]][e];
 						}
+
 						out << endl;
 					}
 				}
 			}
 			else {
+				int new_ind2;
+				vector<int> comm3;
+				int size_comm3;
+
 				for (int r = 1; r < n; r = r + 2) {
-					for (int e = bc[numbers[r] - 2] + 3; e <= bc[numbers[r]]; ++e) {
+
+					comm3 = search_of_comm(sym, bc[numbers[r] - 2] + 3, bc[numbers[r]], arr1[i]);
+
+					size_comm3 = comm3.size();
+
+					if(size_comm3 == 1) {
+						new_ind2 = bc[numbers[r] - 2] + 3;
+					}
+					else {
+						new_ind2 = comm3[size_comm3 - 2] + 2;
+					}
+					for (int e = new_ind2; e <= bc[numbers[r]]; ++e) {
 						out << sym[arr1[i]][e];
 					}
+
 					out << endl;
 				}
 			}
@@ -232,7 +265,7 @@ int main() {
 	}
 
 	function(del, index, pos, sym_of_del);
-	
+
 	system("pause");
 	return 0;
 }

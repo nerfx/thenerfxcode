@@ -1,10 +1,12 @@
 void main()
 {
-	complex a(15L, u1234l), a1(12.3l, 12.3l);
-	int i, j, k;
-	complex b(100ef, 11ef), c(4568l, u45l), d(0.12e5, u12), e(0.1264L, -45), f;
-	complex abcd(11.2f, 11.3F);
+	complex a(15.1L, 1234.2l), a1(123l, 123l), aee(10.11e-1f, 12.33L);
+	int i, j, k, var23(11.1e-1f, 45.11L);
+	complex b(100e1f, 1.1e1l), c(4568.1e10f, 45.1l), d(0.12e5, u12), e(0.1264L, -45), c, var2(1.1e-10f, 67.67L), f;
+	complex abcd(11.2f, 11.3L);
 	c = c*complex(12.345f, 456.1F);
 	complex sdf(12.11f, 34.1f);
+	complex var1(1.23e-1f, 345.345L);
+	
 	f = b*c+complex(10L, u56l);
 }

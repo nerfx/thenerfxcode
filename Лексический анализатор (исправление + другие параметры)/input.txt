@@ -1,10 +1,13 @@
 void main()
 {
-	complex a(15L, u1234l), a1(12.3l, 12.3l);
+	complex a(15.1f, 1234.2f), a1(123f, 123f), aaa(123.23e-1f, 456.45L), f1, f2, f4, dfv(10.11f, 10.11f);
 	int i, j, k;
-	complex b(100ef, 11ef), c(4568l, u45l), d(0.12e5, u12), e(0.1264L, -45), f;
+	complex ab(10.11f, 1011.1f), asdfgh(11.44e-45f, 11.12L), s, sdf, ff, bb, asd(11.22e1f, 11.22f);
+	complex b(100e1f, 1.1e1l), c(4568.1e10f, 45.1l), d(0.12e5, u12), gho(1.1e1f, 12.34L), e(0.1264L, -45), f, var2(1.1e-10f, 67.67L);
 	complex abcd(11.2f, 11.3F);
-	c = c*complex(12.345f, 456.1F);
-	complex sdf(12.11f, 34.1f);
+	c = c*complex(12.345F, 456.1F);
+	complex sdf(12.11f, 34.1F), sdf1(1.2e-1f, 12.12l), l, m, k, dfdfg(11.34f, 11.11F), gh, fgh, fgh, ghky(11.11e-23F, 120L);
+	complex var1(1.23e-1f, 345.345L);
+	complex adcd(11.11l, 11.11l), asdf(11.45e-3F, 125.56L);
 	f = b*c+complex(10L, u56l);
 }

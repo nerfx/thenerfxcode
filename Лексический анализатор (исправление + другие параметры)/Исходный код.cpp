@@ -11,6 +11,7 @@ void output(vector<T> A, int N) {
 	}
 }
 
+
 vector<string> delete_tab(vector<string> B, int size) {
 	for (int i = 0; i < size; ++i) {
 		if (B[i][0] == '\t') {
@@ -24,6 +25,7 @@ vector<string> delete_tab(vector<string> B, int size) {
 	return add_arr;
 }
 
+
 vector<string> del_space(vector<string> C) {
 	int size1 = C.size();
 	for (int i = 0; i < size1; ++i) {
@@ -35,6 +37,8 @@ vector<string> del_space(vector<string> C) {
 	return C;
 }
 
+
+
 vector<int> brack(vector<string> D, int num) {
 	vector<int> brack_ind;
 	int size2 = D[num].size();
@@ -44,24 +48,6 @@ vector<int> brack(vector<string> D, int num) {
 		}
 	}
 	return brack_ind;
-}
-
-void output_class(vector<string> F, int num, int s1, int s2) {
-	if (s1 > 0) {
-		int k = s1 - 1;
-		if (F[num][k] != ' ') {
-			for (int i = k; i <= s2; ++i) {
-				cout << F[num][i];
-			}
-			cout << endl;
-		}
-	}
-	else {
-		for (int i = s1; i <= s2; ++i) {
-			cout << F[num][i];
-		}
-		cout << endl;
-	}
 }
 
 vector<int> search_of_comm(vector<string> complex_class, int ind1, int ind2, int ind_of_row) {
@@ -164,7 +150,7 @@ void function(vector<string> sym, vector<int> arr1, vector<int> arr2, int len) {
 					ind = true;
 					break;
 				}
-			}	
+			}
 
 			if (!ind) {
 				if (numbers.size() / 2 == 1) {
@@ -214,7 +200,7 @@ void function(vector<string> sym, vector<int> arr1, vector<int> arr2, int len) {
 
 					size_comm3 = comm3.size();
 
-					if(size_comm3 == 1) {
+					if (size_comm3 == 1) {
 						new_ind2 = bc[numbers[r] - 2] + 3;
 					}
 					else {

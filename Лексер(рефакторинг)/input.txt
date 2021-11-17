@@ -1,0 +1,6 @@
+void main()
+{
+	complex f, g, h, fghc(11.34e-1, 11.45), dfg(11.12e-1, 45.11), f1, f2, f3, ghnnn(10.11e-1, 11.23), sdf, sdf, fdg, ggggg(11.34e-4, 45.45);
+	a = a*complex(11.23e-1, 11.56);
+	complex d(11.46e-5, 12.89), gh, gf, fr, kali(78.41e-1, 54.12);
+}
